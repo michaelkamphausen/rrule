@@ -184,7 +184,7 @@ export default class RRuleSet extends RRule {
    * Create a new RRuleSet Object completely base on current instance
    */
   clone (): RRuleSet {
-    const rrs = new RRuleSet(!!this._cache)
+    const rrs = new RRuleSet(!this._cache)
 
     this._rrule.forEach(rule => rrs.rrule(rule.clone()))
     this._exrule.forEach(rule => rrs.exrule(rule.clone()))
